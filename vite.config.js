@@ -3,6 +3,6 @@ import { defineConfig } from 'vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: process.env.BASE_PATH || '/LINUKE-PORTFOLIO/',
+  base: '/',
   plugins: [react()],
 })
