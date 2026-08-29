@@ -1,183 +1,81 @@
-# AHMED-OS Linux Portfolio
+# LINUKE — Linux Portfolio OS
 
-AHMED-OS is a **Linux desktop themed engineering portfolio** built with React 19 + Vite. It presents Ahmed Irfan Akrami's hardware, embedded, robotics, software, and AI projects as a fully functional browser-based operating system.
+I'm **Ahmed Irfan Akrami** — Robotics & AI Engineer (B.E. Robotics & AI, AITM Bhatkal) and Mechanical Lead of **Team VoltEdge 007** — **NRL 2025 Community Champions** at IIT Bombay. I build across hardware and software: ESP32/C++ embedded, competition robotics, and full-stack web/AI.
 
-**Live Demo:** https://xcyberx01.github.io/ahmed-os-linux-portfolio/
+**LINUKE** is my Linux desktop-themed portfolio — I rebuilt it as a browser OS so you can explore my work like a real system, not a static page.
 
----
-
-## ✨ Features
-
-### Core OS
-- **Linux Desktop Environment** — 15:10 locked canvas, top panel, taskbar, desktop icons, draggable/resizable/maximizable/minimizable windows with z-index management
-- **Boot → Login → Desktop flow** — password hints: `linux` · `mintex` · `password` · `ahmed`
-- **Mario Welcome Animation** — interactive intro with growing Mario, coin collection, and crystal ball welcome dialog (shows once per user)
-- **Mario easter egg** — `⌘/Ctrl+R` opens Run dialog (Windows-style)
-- **Clippy Assistant** — appears after 10s with tips, chat, and like button
-- **Patch Notification** — version update banner with install/remind later options
-
-### Window Management
-- **Drag & Drop** — titlebar drag, edge/corner resize (8 handles), double-click titlebar to maximize
-- **Focus & Z-order** — click any window to focus, taskbar shows active app
-- **Minimize/Maximize/Close** — per-window controls, taskbar right-click context menu
-- **Right-click Context Menus** — desktop (New Folder, Terminal, Refresh), icons (Open, Rename, Move to Trash), with "Arrange By" submenu
-- **Draggable Desktop Icons** — grid-snap, positions persisted to localStorage
-
-### Start Menu / App Launcher
-- **Tile Grid Mode** (Windows 10 style) — 8-column grid, pinned section + all apps, drag-to-reorder, right-click pin/unpin/resize/uninstall, live tiles, search filter
-- **Classic App Drawer** (@dnd-kit) — paginated (20/page), searchable, reorderable with edge-flip, swipe gestures, keyboard arrows, page dots
-- **App Store** — categories (All/Games/Utilities/Productivity/Not Installed), search, install/uninstall with animated notifications
-- **Run Dialog** (`⌘/Ctrl+R`) — command palette with suggestions, opens apps/URLs, error handling
-
-### Notifications & System
-- **Framer Motion Toasts** — slide-in from right/bottom, auto-dismiss, click to action
-- **Patch/Update Banner** — dismissible, remembers version
-- **Clippy** — animated SVG, tips/chat/like, remembers dismissed state
+**Live:** https://webcv-ahmed.netlify.app — also installable as a PWA (standalone app)
+**GitHub:** https://github.com/xCYBERx01/LINUKE-PORTFOLIO
+**Contact:** iahmedakrami@gmail.com | linkedin.com/in/ahmedirfanak | Karnataka, India
 
 ---
 
-## 📦 Apps Included
+## What I built
 
-| App | Description |
-|-----|-------------|
-| **Home / About** | Profile, stats, quick launch |
-| **Projects** | Filterable project browser (Software/Hardware/AI/Robotics/Embedded/Automation) with inspector |
-| **Resume** | Markdown resume viewer |
-| **Terminal** | Command parser (`open <app>`, `ls`, `help`, `clear`, `whoami`, `neofetch`, `date`, `uptime`) |
-| **Files** | File manager with sidebar navigation (Home/Documents/Downloads/Pictures) |
-| **Notes** | Auto-save notepad with word/char count |
-| **Paint** | Canvas drawing with color picker, brush size, clear |
-| **Minesweeper** | 3 difficulties, flag mode, win/lose overlays, flag counter |
-| **Flappy Bird** | Click/Space to flap, score, game over, restart |
-| **Pac-Man** | Arrow/WASD, ghosts (chase/scatter/frightened), power pellets, lives, win |
-| **Crossy Road** | Arrow/WASD hop, 15-row grid, car/log lanes, score |
-| **Games Folder** | Unified launcher with grid/list view, play buttons, descriptions |
-| **Netlify Games** | Iframe-hosted games (Flappy, Pac-Man, Crossy on Netlify) with reload/external/open |
-| **Media Player** | Webamp Winamp skin with demo track |
-| **Task Manager** | Processes/Performance/Users tabs, End Task, live CPU/memory sparklines |
-| **System Monitor** | CPU/memory/swap gauges, OS info |
-| **Recycle Bin / Trash** | Restore to original folder, permanent delete |
-| **Calendar** | Month view, today highlight, selection, keyboard nav |
-| **Browser** | DuckDuckGo/Google/Bing/Yahoo search, back/forward/home/refresh, blocked-site fallback |
-| **Internet Explorer** | Full IE-style toolbar, favorites/history/settings sidebars, downloads, progress bar, multiple search engines |
-| **Crypto Tracker** | Live BTC/USD via Coinbase, 50-candle chart (Recharts) |
-| **News & Weather** | Spaceflight News API, Open-Meteo geolocation, °C/°F toggle |
-| **Settings** | 8 wallpapers, 6 accent colors, desktop effects toggles, icon size slider, quick apps |
-| **App Store** | Categories, search, install/uninstall, persistent desktop icons |
-| **MSN Messenger** | Chat tabs (Chat/Contacts/Settings), Clippy bot, nudge sound, emoji picker, unread badges |
-| **Fortune Teller** | Crystal ball animation, daily fortune, category filter, history |
-| **Tile Grid** | Windows 10 Start screen clone — pin, resize (S/M/W/L), live tiles, all apps search |
+I wanted my portfolio to feel like using Linux — windows you drag, a terminal you type in, a file manager you browse, and a companion that feels alive. LINUKE boots into a **GNOME/Yaru Dark** shell (top bar, left dock, `#2d2d2d` / `#1e1e1e` / `#E95420`) and lets you explore **13 shipped projects + 2 bonus builds**:
+
+- **Croc OS v0.5.3** — my ESP32 desk companion on **SH110X 1.3" cyber blue #4fc3f7 128×64**. I ported its **FACEMODE** exactly (pill eyes, slanted brows, glints, `yawn/wonder/hiccup`, `love/trick/angry`, blink `160ms`, sleepy `Zzz`) to replace Clippy — eyes follow your cursor when idle and tilt on click.
+- **EdgeBot** — my NRL 2025 competition robot (Team ID 007) — chassis, arm/gripper, torque balancing for repeated-run reliability.
+- **LA-NUKES (as Linux)** — this OS itself — React 19 + Vite, draggable/resizable windows, z-index focus, window chrome with GNOME rounding.
+- **Meadow, Kharcha, AI Sports Engine, Wildlife Card Game, Drone, Moon Rover, IoT Telemetry & Field Analyzer, ProjectDirec** — plus PC Benchmark & Pet Feeder as bonus.
+
+I also shipped the **electronics and dashboards** behind them: Mosquitto MQTT + InfluxDB + Recharts (robot telemetry) and FastAPI + Pandas + PostgreSQL + Chart.js (field shutter analytics), and the **ProjectDirec** scrapers (Scrapy/BeautifulSoup + Typesense).
 
 ---
 
-## 🛠 Tech Stack
+## How I organized it
 
-- **React 19** + **Vite 8**
-- **React Router** (via manual window manager)
-- **Framer Motion** — all animations
-- **React Draggable** — desktop icons & windows
-- **@dnd-kit** — Start Menu drag-drop reorder
-- **Lucide React** — icons
-- **Recharts** — crypto charts
-- **Webamp** — Winamp player
-- **Axios** — API calls
-- **Oxlint** — zero-error linting
+- **Nautilus (Files):** I split `Projects` into `hardware` (Embedded/Robotics/Automation — 7) and `software` (Software/AI — 6), and added **Awards** alongside Projects. Resume is **Yute-style**: `ResumeFile | Github | WebResume` (3 objects, `2143 KB`) with my paper **RESUME.PNG** (`public/resume.png` 114KB) rendered inline.
+- **Firefox:** I made it a **portfolio viewer** — defaults to `webcv-ahmed.netlify.app`, embed-friendly (`example.com` fallback), Brave search, always-visible `X-Frame-Options` hint and `Open in New Tab`.
+- **Terminal:** I wired it to my data — `ls` mirrors Nautilus, `projects` lists 13, `stack` dumps stacks, `open nautilus/firefox/dashboard`, `cat resume` shows my markdown, `whoami` is my bio.
+- **Dashboard:** I added **Football Live** (`v3.football.api-sports.io` live + today fallback) and **Cricket Live** (`api.cricapi.com`) with your keys, plus Weather/Crypto/News/Fortune/Clock/System Pulse/GitHub Pulse.
 
 ---
 
-## 🎮 Games (3 Native + 3 Netlify)
+## What I fixed and polished
 
-| Game | Controls | Features |
-|------|----------|----------|
-| **Flappy Bird** | Click / Space | Score, game over, restart |
-| **Pac-Man** | Arrow / WASD | Ghost AI (chase/scatter/frightened), power pellets, 3 lives, win screen |
-| **Crossy Road** | Arrow / WASD | 15 rows, car/log lanes, hop animation, score |
+- I made **Paint** fully functional — pen/brush/eraser/fill/line/rect/circle/text/pick, palette + picker, size + fill toggle, **flood fill**, **undo 20 / redo**, **Save PNG**, touch + mouse.
+- I revamped **Calendar** — month/week toggle, **add events** (title/time/color), dots on days, week cards, `localStorage`, `Selected: … • n events`.
+- I fixed the **glitchy side scrollbars** — thin `8px` overlay, `scrollbar-gutter: stable`, `overflow-y auto + x hidden`.
+- I fixed **App Store** — removed Draggable glitch, now proper `installed` Set in `localStorage`, categories filter, `Install/Uninstall` with notifications (Store protected).
+- I revamped **Notes** — multi-note sidebar, search, `Bold/Italic/H1/List/Quote/Code` toolbar, **Preview** markdown, word/char count.
+- I revamped **Settings** — Appearance (8 wallpapers, 6 accents), Desktop effects (`anim/blur/reduce/Croc` persisted), **Dock icon size live 56–96px**, Reset All.
+- I revamped **Media** — Webamp when online with 4-track playlist, **HTML5 fallback** (`Play/Pause/Skip/Volume/Seek`) when offline.
+- I removed the **Mario easter egg** — clean FACEMODE only.
 
 ---
 
-## 🚀 Local Development
+## My stack
+
+I built LINUKE with **React 19 + Vite 8**, **Framer Motion**, **React Draggable**, **@dnd-kit**, **lucide-react**, **Recharts**, **Webamp**, **Axios**. No `create-react-app` bloat — just `npm run dev` / `build` / `preview`.
+
+---
+
+## Run it yourself
 
 ```bash
-# Install dependencies
 npm install
-
-# Start dev server (http://localhost:5173)
-npm run dev
-
-# Lint (zero errors)
-npm run lint
-
-# Production build
-npm run build
-
-# Preview build
-npm run preview
+npm run dev      # http://localhost:5173/
+npm run build    # → dist/
+npm run preview  # http://localhost:4173/
 ```
 
-**Note:** Use `& "C:\Program Files\nodejs\npm.cmd"` on Windows PowerShell instead of `npm`.
+On Windows PowerShell use `& "C:\Program Files\nodejs\npm.cmd" run dev`.
 
 ---
 
-## 📦 Deployment
+## Deploy
 
-Configured for **GitHub Pages** via GitHub Actions. The production site is at:
-
-```
-https://xcyberx01.github.io/ahmed-os-linux-portfolio/
-```
-
-Vite `base` is set to `/ahmed-os-linux-portfolio/` in `vite.config.js`.
+I host at **webcv-ahmed.netlify.app** (PWA, `manifest.json` + `sw.js` `v2`, `_redirects` for SPA). `vite.config.js` `base:'/'` for Netlify root. For GitHub Pages use `base:'/LINUKE-PORTFOLIO/'`.
 
 ---
 
-## 🔐 Login Passwords
+## My awards
 
-Any of these work: `linux` · `mintex` · `password` · `ahmed`
+I list them in `resume.md` and `Awards` folder: **NRL Community Champions**, **Aspire Scientist**, **Young Researcher**, **CODEx/Stackathon Finalists**, **TCS IT Quiz State 2×**, **Influenstar / Brand Builder / Changemakers** — plus 13 projects.
 
----
+If you like it, star **github.com/xCYBERx01/LINUKE-PORTFOLIO** — Croc says thanks ❤️
 
-## 🎯 Inspired By
+## License
 
-- [wins95Portfolio](https://yuteoctober.github.io/wins95Portfolio/) — Windows 95 React portfolio
-- Classic Linux DEs (GNOME 2, KDE 3, XFCE)
-- Windows 95/98/XP/10 UI patterns
-
----
-
-## 📁 Project Structure
-
-```
-src/
-├── App.jsx                 # Root component, providers, global state
-├── main.jsx                # Entry point
-├── index.css               # All styles (CSS variables, components)
-├── os/
-│   ├── AppContext.jsx      # Global context (notifications)
-│   ├── App.jsx             # MintexOSInner + providers
-│   ├── WindowManager.jsx   # Window rendering, drag/resize/focus
-│   ├── Desktop.jsx         # Boot/Login/Shutdown/Desktop/Taskbar/AppDrawer
-│   ├── registry.jsx        # App registry (30+ apps)
-│   ├── data/               # Projects, contact data
-│   ├── components/         # Notification, DraggableIcon, RightClickMenu, AppDrawer, TileGrid, RunDialog, PatchNotification, Clippy, MarioWelcome
-│   └── apps/               # All app components (30+)
-│       ├── Content.jsx     # About, Resume, Contact, Notepad, Settings, Calendar
-│       ├── Files.jsx       # ProjectsWindow, FilesWindow
-│       ├── Terminal.jsx
-│       ├── Games.jsx       # Minesweeper, Paint
-│       ├── Games2.jsx      # FlappyBird, PacMan, CrossyRoad
-│       ├── GamesFolder.jsx # Unified games launcher
-│       ├── System.jsx      # TaskManager, SysMonitor, RecycleBin
-│       ├── Live.jsx        # Crypto, News, Browser
-│       ├── Media.jsx       # Webamp
-│       ├── MSN.jsx         # Messenger with bot/nudge
-│       ├── FortuneTeller.jsx
-│       ├── IEBrowser.jsx   # Full IE clone
-│       ├── NetlifyGames.jsx
-│       └── ...
-```
-
----
-
-## 📄 License
-
-MIT — free to use, modify, and distribute.
+MIT — I built it to share. Fork it, remix it.
