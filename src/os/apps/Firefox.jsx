@@ -19,6 +19,7 @@ import {
 const FIREFOX_HOME = "https://webcv-ahmed.netlify.app";
 const EMBED_FRIENDLY = [
   { label: "WebCV — Ahmed (your site as app)", url: "https://webcv-ahmed.netlify.app" },
+  { label: "AhmedCLI — CLI portfolio", url: "https://ahmedcli.netlify.app" },
   { label: "Example (always works)", url: "https://example.com" },
   { label: "Wikipedia — Robotics", url: "https://en.wikipedia.org/wiki/Robotics" },
   { label: "MDN Web Docs", url: "https://developer.mozilla.org/en-US/" },
@@ -43,6 +44,7 @@ export default function Firefox({ win }) {
     try {
       return JSON.parse(localStorage.getItem("firefox_bookmarks")) || [
         { url: "https://webcv-ahmed.netlify.app", title: "WebCV — Ahmed (app)" },
+        { url: "https://ahmedcli.netlify.app", title: "AhmedCLI — CLI" },
         { url: "https://example.com", title: "Example" },
         { url: "https://github.com/xCYBERx01", title: "GitHub — xCYBERx01" },
       ];

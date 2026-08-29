@@ -4,7 +4,7 @@ I'm **Ahmed Irfan Akrami** — Robotics & AI Engineer (B.E. Robotics & AI, AITM 
 
 **LINUKE** is my Linux desktop-themed portfolio — I rebuilt it as a browser OS so you can explore my work like a real system, not a static page.
 
-**Live:** https://webcv-ahmed.netlify.app — also installable as a PWA (standalone app)
+**Live:** https://webcv-ahmed.netlify.app & https://ahmedcli.netlify.app — also installable as a PWA (standalone app)
 **GitHub:** https://github.com/xCYBERx01/LINUKE-PORTFOLIO
 **Contact:** iahmedakrami@gmail.com | linkedin.com/in/ahmedirfanak | Karnataka, India
 

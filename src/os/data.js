@@ -212,7 +212,7 @@ export const PROJECTS_ALL = [...projects, ...bonusProjects];
 export const resumeMarkdown = `
 # AHMED IRFAN AKRAMI
 **Robotics & AI Engineer | Full-Stack Developer**
-iahmedakrami@gmail.com | linkedin.com/in/ahmedirfanak | github.com/xCYBERx01 | webcv-ahmed.netlify.app | Karnataka, India
+iahmedakrami@gmail.com | linkedin.com/in/ahmedirfanak | github.com/xCYBERx01 | webcv-ahmed.netlify.app | ahmedcli.netlify.app | Karnataka, India
 
 ## PROFILE
 Robotics and AI engineering student building across the boundary between hardware and software — embedded systems, competition robotics, full-stack web applications, and applied AI. Mechanical Lead on a national-level robotics team, with a track record of shipping complete, working systems: an ESP32-based device with persistent memory and personality, an AI-integrated tournament platform, and a mobile app that turns real wildlife photography into a collectible game.
@@ -269,6 +269,7 @@ export const contact = {
   github: `https://github.com/${GITHUB_USER}`,
   linkedin: "https://linkedin.com/in/ahmedirfanak",
   website: "https://webcv-ahmed.netlify.app",
+  cli: "https://ahmedcli.netlify.app",
   location: "Karnataka, India",
   phone: ""
 };

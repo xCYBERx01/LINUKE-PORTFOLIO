@@ -114,11 +114,12 @@ const FOLDER_TREE = [
         id: "resume",
         label: "Resume",
         icon: FileText,
-        // matches Yute: Resume window shows 3 objects — ResumeFile, Github, WebResume
+        // matches Yute: Resume window shows 4 objects — ResumeFile, Github, WebResume, AhmedCLI
         children: [
           { id: "resume-file", label: "ResumeFile", icon: FileText, data: { type: "resume" } },
           { id: "resume-github", label: "Github", icon: Globe, data: { type: "link", url: `https://github.com/${contact.github.replace("https://github.com/", "").replace("github.com/", "")}` || "https://github.com/xCYBERx01", label: "Github" } },
           { id: "resume-web", label: "WebResume", icon: Globe, data: { type: "link", url: contact.website || "https://webcv-ahmed.netlify.app", label: "WebResume" } },
+          { id: "resume-cli", label: "AhmedCLI", icon: Globe, data: { type: "link", url: contact.cli || "https://ahmedcli.netlify.app", label: "AhmedCLI" } },
         ],
       },
       {
@@ -380,7 +381,7 @@ export default function Nautilus() {
             {isResumeFolder && (
               <div style={{ display: "flex", borderTop: "1px solid #333", fontSize: 11, color: "#888", background: "#1a1a1a" }}>
                 <span style={{ flex: 1, padding: "4px 8px", borderRight: "1px solid #333" }}>{children.length} object(s)</span>
-                <span style={{ padding: "4px 8px" }}>2143 KB</span>
+                <span style={{ padding: "4px 8px" }}>2871 KB</span>
               </div>
             )}
           </>
