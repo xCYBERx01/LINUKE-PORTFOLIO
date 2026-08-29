@@ -1,0 +1,39 @@
+{
+  "name": "mintex",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "@dnd-kit/core": "^6.3.1",
+    "@dnd-kit/sortable": "^10.0.0",
+    "@dnd-kit/utilities": "^3.2.2",
+    "@emailjs/browser": "^4.4.1",
+    "axios": "^1.20.0",
+    "bad-words": "^4.1.5",
+    "dayjs": "^1.11.23",
+    "framer-motion": "^13.1.1",
+    "lucide-react": "^1.35.0",
+    "react": "^19.2.8",
+    "react-calendar": "^6.0.1",
+    "react-color": "^2.19.3",
+    "react-dom": "^19.2.8",
+    "react-draggable": "^4.7.1",
+    "react-icons": "^5.7.0",
+    "react-switch": "^7.1.0",
+    "recharts": "^3.10.1",
+    "webamp": "^2.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.4",
+    "@vitejs/plugin-react": "^6.1.0",
+    "oxlint": "^1.79.0",
+    "vite": "^8.2.2"
+  }
+}
