@@ -9,7 +9,6 @@ import { AppDrawer } from "./os/components/AppDrawer";
 import { RunDialog } from "./os/components/RunDialog";
 import { PatchNotification } from "./os/components/PatchNotification";
 import Croc from "./os/components/Croc";
-import { MarioWelcome } from "./os/components/MarioWelcome";
 import TopBar from "./os/components/TopBar";
 import Dock from "./os/components/Dock";
 import Dashboard from "./os/apps/Dashboard";
@@ -58,9 +57,6 @@ function MintexOSInner() {
   const [runDialogOpen, setRunDialogOpen] = useState(false);
   const [shutdownOpen, setShutdownOpen] = useState(false);
   const [dashboardOpen, setDashboardOpen] = useState(false);
-  const [showMarioWelcome, setShowMarioWelcome] = useState(
-    () => !localStorage.getItem("mintex_mario_shown")
-  );
 
   const MAIN_APPS = desktopApps();
 
@@ -313,15 +309,6 @@ function MintexOSInner() {
       <Croc />
 
       <Notification />
-
-      {showMarioWelcome && (
-        <MarioWelcome
-          onComplete={() => {
-            localStorage.setItem("mintex_mario_shown", "true");
-            setShowMarioWelcome(false);
-          }}
-        />
-      )}
     </div>
   );
 }
