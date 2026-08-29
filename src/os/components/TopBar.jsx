@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import {
   Wifi,
   Volume2,
@@ -7,10 +7,35 @@ import {
   Settings,
   User,
   ChevronDown,
+  Maximize2,
+  Minimize2,
 } from "lucide-react";
 
 export default function TopBar({ now, onOpenApp, onShutdown, onActivities }) {
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isFs, setIsFs] = useState(!!document.fullscreenElement);
+
+  function toggleFs() {
+    if (!document.fullscreenElement) {
+      document.documentElement.requestFullscreen?.().catch(() => {});
+    } else {
+      document.exitFullscreen?.();
+    }
+  }
+
+  useEffect(() => {
+    function onFs() { setIsFs(!!document.fullscreenElement); }
+    function onKey(e) {
+      if (e.key === "F11") { e.preventDefault(); toggleFs(); }
+      if (e.ctrlKey && e.shiftKey && e.key.toLowerCase() === "f") { e.preventDefault(); toggleFs(); }
+    }
+    document.addEventListener("fullscreenchange", onFs);
+    window.addEventListener("keydown", onKey);
+    return () => {
+      document.removeEventListener("fullscreenchange", onFs);
+      window.removeEventListener("keydown", onKey);
+    };
+  }, []);
 
   function formatTime(date) {
     return date.toLocaleTimeString([], { hour: "2-digit", minute: "2-digit" });
@@ -37,6 +62,15 @@ export default function TopBar({ now, onOpenApp, onShutdown, onActivities }) {
       </div>
 
       <div className="gnome-topbar-right">
+        <button
+          className="gnome-topbar-fs"
+          onClick={toggleFs}
+          title={isFs ? "Exit fullscreen (F11)" : "Fullscreen (F11)"}
+          aria-label={isFs ? "Exit fullscreen" : "Enter fullscreen"}
+        >
+          {isFs ? <Minimize2 size={14} /> : <Maximize2 size={14} />}
+        </button>
+
         <button
           className="gnome-topbar-systray"
           onClick={() => setMenuOpen(!menuOpen)}
