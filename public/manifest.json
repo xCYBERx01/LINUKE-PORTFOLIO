@@ -1,9 +1,9 @@
 {
-  "name": "AHMED OS — Ahmed Irfan Akrami",
-  "short_name": "AHMED OS",
-  "description": "Robotics & AI Engineer — ESP32, NRL VoltEdge 007, Full-Stack, Croc OS 1.3\" SH110X cyber blue",
-  "start_url": "/",
-  "scope": "/",
+  "name": "LINUKE — Ahmed Irfan Akrami",
+  "short_name": "LINUKE",
+  "description": "Robotics & AI Engineer — ESP32, NRL VoltEdge 007, Croc OS v0.5.3 1.3\" SH110X cyber blue",
+  "start_url": "/LINUKE-PORTFOLIO/",
+  "scope": "/LINUKE-PORTFOLIO/",
   "display": "standalone",
   "display_override": ["window-controls-overlay", "standalone", "browser"],
   "background_color": "#111111",
@@ -11,13 +11,13 @@
   "orientation": "any",
   "categories": ["portfolio", "productivity", "education"],
   "icons": [
-    { "src": "/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
-    { "src": "/icons.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+    { "src": "/LINUKE-PORTFOLIO/favicon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" },
+    { "src": "/LINUKE-PORTFOLIO/icons.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
   ],
   "shortcuts": [
-    { "name": "Projects", "url": "/#nautilus", "description": "Browse 13 projects" },
-    { "name": "Terminal", "url": "/#terminal", "description": "CLI" },
-    { "name": "Resume", "url": "/#resume", "description": "Resume" }
+    { "name": "Projects", "url": "/LINUKE-PORTFOLIO/#nautilus", "description": "Browse 13 projects" },
+    { "name": "Terminal", "url": "/LINUKE-PORTFOLIO/#terminal", "description": "CLI" },
+    { "name": "Resume", "url": "/LINUKE-PORTFOLIO/#resume", "description": "Resume" }
   ],
   "launch_handler": { "client_mode": "auto" },
   "handle_links": "preferred",
