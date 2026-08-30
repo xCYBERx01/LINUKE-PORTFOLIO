@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from "react";
 import { Folder, RefreshCw, Image, TerminalSquare } from "lucide-react";
 import WindowManager from "./os/WindowManager";
-import { BootScreen, LoginScreen, ShutdownDialog } from "./os/Desktop";
+import { ShutdownDialog } from "./os/Desktop";
 import { appRenderer, appTitle, desktopApps } from "./os/registry";
 import { AppProvider, useAppContext } from "./os/AppContext";
 import { Notification } from "./os/components/Notification";
