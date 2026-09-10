@@ -1,0 +1,65 @@
+[
+  {
+    "id": "awd-01",
+    "name": "NRL 2025 Community Champions",
+    "org": "IIT Bombay × The Innovation Story",
+    "year": "2025",
+    "desc": "Team VoltEdge 007 — Mechanical Lead. National finals Dec 6-7, IIT Bombay."
+  },
+  {
+    "id": "awd-02",
+    "name": "Aspire Scientist Award",
+    "org": "Aspire",
+    "year": "",
+    "desc": "Winner — research & innovation."
+  },
+  {
+    "id": "awd-03",
+    "name": "Young Researcher Award",
+    "org": "",
+    "year": "",
+    "desc": "Winner — youth research excellence."
+  },
+  {
+    "id": "awd-04",
+    "name": "CODEx Finalist",
+    "org": "CODEx",
+    "year": "",
+    "desc": "National coding/design exhibition finalist."
+  },
+  {
+    "id": "awd-05",
+    "name": "Stackathon Finalist",
+    "org": "Stackathon",
+    "year": "",
+    "desc": "Hackathon finalist."
+  },
+  {
+    "id": "awd-06",
+    "name": "Tata TCS IT Quiz — State Level",
+    "org": "TCS",
+    "year": "",
+    "desc": "2× State-level qualifier / finalist."
+  },
+  {
+    "id": "awd-07",
+    "name": "Influenstar",
+    "org": "",
+    "year": "",
+    "desc": "Recognized — confirm category."
+  },
+  {
+    "id": "awd-08",
+    "name": "Brand Builder",
+    "org": "",
+    "year": "",
+    "desc": "Recognized — confirm category."
+  },
+  {
+    "id": "awd-09",
+    "name": "The Changemakers",
+    "org": "NRL Changemakers",
+    "year": "2025",
+    "desc": "Recognized — community impact (NRL award category)."
+  }
+]

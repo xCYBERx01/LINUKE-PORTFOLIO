@@ -1,0 +1,26 @@
+[
+  {
+    "id": "bonus-01",
+    "name": "PC Benchmark Script",
+    "group": "Software",
+    "path": "/projects/pc-benchmark",
+    "summary": "A Python script that benchmarks a physical PC's CPU, GPU, and system performance.",
+    "details": "Stack: Python, system/hardware benchmarking libraries (e.g. psutil, py-cpuinfo, GPUtil-style GPU polling), performance logging/reporting",
+    "description": "A Python-based benchmarking script that measures and reports real hardware performance on a physical machine — CPU load/throughput, GPU stats, and general system performance — rather than comparing spec sheets. Useful as a quick diagnostic tool for checking whether a machine is performing as expected under load.",
+    "github": "https://github.com/xCYBERx01",
+    "live": "#",
+    "image": "/assets/projects/pcbench.png"
+  },
+  {
+    "id": "bonus-02",
+    "name": "Smart Pet Feeder",
+    "group": "Embedded",
+    "path": "/projects/pet-feeder",
+    "summary": "An IoT smart feeder and environmental monitor for pets.",
+    "details": "Stack: Microcontroller (ESP-class), load cell for portion sensing, RTC module for scheduled feeding, MQTT or WiFi for remote status",
+    "description": "An IoT feeding system that dispenses food on a schedule and monitors feeding activity, using a load cell to sense dispensed portion weight and an RTC module to keep scheduled feeding times accurate even without constant network access. Designed as a small home-automation project applying the same embedded-systems skills (sensors, scheduling, persistence) used in Croc OS to a different problem.",
+    "github": "https://github.com/xCYBERx01",
+    "live": "#",
+    "image": "/assets/projects/petfeeder.png"
+  }
+]
