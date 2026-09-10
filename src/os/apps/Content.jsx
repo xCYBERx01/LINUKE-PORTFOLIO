@@ -48,7 +48,7 @@ export function ResumeWindow() {
         <ul>
           <li>Croc OS v0.5.4, an ESP32 companion with OLED personality, weather, NTP, and NVS memory.</li>
           <li>EdgeBot for Team VoltEdge at NRL 2025, focused on mechanical reliability under competition stress.</li>
-          <li>CURIO, Meadow, Kharcha, Sports Tournament Web App, Wildlife Card Game, and Robotics Circuits Skill.</li>
+          <li>DESKO, Meadow, Kharcha, Sports Tournament Web App, Wildlife Card Game, and Robotics Circuits Skill.</li>
         </ul>
       </section>
       <section>
@@ -76,8 +76,8 @@ export function ContactWindow() {
   );
 }
 
-const NOTES_KEY = "curio_notes_v2";
-const SAVE_KEY = "curio_notes";
+const NOTES_KEY = "desko_notes_v2";
+const SAVE_KEY = "desko_notes";
 
 function renderMarkdown(src) {
   let html = src
@@ -131,7 +131,7 @@ export function NotepadWindow() {
     setActiveId(notes.find((n) => n.id !== activeId)?.id || notes[0].id);
   }
   function wrapSelection(before, after = before) {
-    const ta = document.getElementById("curio-ta");
+    const ta = document.getElementById("desko-ta");
     if (!ta) return;
     const s = ta.selectionStart, e = ta.selectionEnd;
     const t = active.text;
@@ -140,7 +140,7 @@ export function NotepadWindow() {
     setTimeout(() => { ta.focus(); ta.setSelectionRange(s + before.length, e + before.length); }, 0);
   }
   function insertAtCursor(txt) {
-    const ta = document.getElementById("curio-ta");
+    const ta = document.getElementById("desko-ta");
     const s = ta ? ta.selectionStart : active.text.length;
     const t = active.text;
     updateActive({ text: t.slice(0, s) + txt + t.slice(s) });
@@ -184,7 +184,7 @@ export function NotepadWindow() {
         {preview ? (
           <div style={{ flex: 1, overflowY: "auto", padding: 16, background: "#1e1e1e", color: "#ddd", lineHeight: 1.6 }} dangerouslySetInnerHTML={{ __html: renderMarkdown(active.text) }} />
         ) : (
-          <textarea id="curio-ta" value={active.text} onChange={(e) => updateActive({ text: e.target.value })} spellCheck={false} style={{ flex: 1, padding: 14, background: "#1e1e1e", color: "#ddd", border: 0, outline: 0, resize: "none", fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 1.6 }} />
+          <textarea id="desko-ta" value={active.text} onChange={(e) => updateActive({ text: e.target.value })} spellCheck={false} style={{ flex: 1, padding: 14, background: "#1e1e1e", color: "#ddd", border: 0, outline: 0, resize: "none", fontFamily: "var(--font-mono)", fontSize: 13, lineHeight: 1.6 }} />
         )}
         <div style={{ padding: "5px 8px", fontSize: 11, color: "#666", background: "#111", borderTop: "1px solid #222", display: "flex", justifyContent: "space-between" }}>
           <span>{active.text.length} chars • {active.text.split(/\s+/).filter(Boolean).length} words</span>
@@ -197,7 +197,7 @@ export function NotepadWindow() {
 
 export function SettingsWindow({ onSetWallpaper, wallpaper, accent, onAccent, onOpenApp }) {
   const wallpapers = [
-    { id: "default", name: "Curio Default", css: "default" },
+    { id: "default", name: "Desko Default", css: "default" },
     { id: "gnome", name: "GNOME Blue", css: "gnome" },
     { id: "ubuntu", name: "Ubuntu Purple", css: "ubuntu" },
     { id: "arch", name: "Arch", css: "arch" },
@@ -214,17 +214,17 @@ export function SettingsWindow({ onSetWallpaper, wallpaper, accent, onAccent, on
     { id: "orange", color: "var(--accent-orange)" },
     { id: "pink", color: "var(--accent-pink)" },
   ];
-  const [anim, setAnim] = useState(() => localStorage.getItem("curio_anim") !== "0");
-  const [blur, setBlur] = useState(() => localStorage.getItem("curio_blur") !== "0");
-  const [reduce, setReduce] = useState(() => localStorage.getItem("curio_reduce") === "1");
-  const [croc, setCroc] = useState(() => localStorage.getItem("curio_croc_hidden") !== "1");
-  const [iconSize, setIconSize] = useState(() => Number(localStorage.getItem("curio_icon_size") || 80));
+  const [anim, setAnim] = useState(() => localStorage.getItem("desko_anim") !== "0");
+  const [blur, setBlur] = useState(() => localStorage.getItem("desko_blur") !== "0");
+  const [reduce, setReduce] = useState(() => localStorage.getItem("desko_reduce") === "1");
+  const [croc, setCroc] = useState(() => localStorage.getItem("desko_croc_hidden") !== "1");
+  const [iconSize, setIconSize] = useState(() => Number(localStorage.getItem("desko_icon_size") || 80));
 
-  useEffect(() => { localStorage.setItem("curio_anim", anim ? "1" : "0"); document.documentElement.dataset.anim = anim ? "1" : "0"; }, [anim]);
-  useEffect(() => { localStorage.setItem("curio_blur", blur ? "1" : "0"); document.documentElement.dataset.blur = blur ? "1" : "0"; }, [blur]);
-  useEffect(() => { localStorage.setItem("curio_reduce", reduce ? "1" : "0"); document.documentElement.dataset.reduce = reduce ? "1" : "0"; }, [reduce]);
-  useEffect(() => { localStorage.setItem("curio_croc_hidden", croc ? "0" : "1"); }, [croc]);
-  useEffect(() => { localStorage.setItem("curio_icon_size", String(iconSize)); document.documentElement.style.setProperty("--dock-icon-size", `${iconSize}px`); }, [iconSize]);
+  useEffect(() => { localStorage.setItem("desko_anim", anim ? "1" : "0"); document.documentElement.dataset.anim = anim ? "1" : "0"; }, [anim]);
+  useEffect(() => { localStorage.setItem("desko_blur", blur ? "1" : "0"); document.documentElement.dataset.blur = blur ? "1" : "0"; }, [blur]);
+  useEffect(() => { localStorage.setItem("desko_reduce", reduce ? "1" : "0"); document.documentElement.dataset.reduce = reduce ? "1" : "0"; }, [reduce]);
+  useEffect(() => { localStorage.setItem("desko_croc_hidden", croc ? "0" : "1"); }, [croc]);
+  useEffect(() => { localStorage.setItem("desko_icon_size", String(iconSize)); document.documentElement.style.setProperty("--dock-icon-size", `${iconSize}px`); }, [iconSize]);
 
   return (
     <div className="os-settings" style={{ overflowY: "auto" }}>
@@ -292,13 +292,13 @@ export function SettingsWindow({ onSetWallpaper, wallpaper, accent, onAccent, on
           <button onClick={() => onOpenApp("taskmanager")}>Task Manager</button>
           <button onClick={() => onOpenApp("terminal")}>Terminal</button>
           <button onClick={() => onOpenApp("store")}>App Store</button>
-          <button onClick={() => { if (confirm("Reset all CURIO settings? This clears localStorage.")) { localStorage.clear(); location.reload(); } }} style={{ borderColor: "#E95420", color: "#E95420" }}>Reset All</button>
+          <button onClick={() => { if (confirm("Reset all DESKO settings? This clears localStorage.")) { localStorage.clear(); location.reload(); } }} style={{ borderColor: "#E95420", color: "#E95420" }}>Reset All</button>
         </div>
       </div>
 
       <div className="os-setting-group">
         <h3>About</h3>
-        <p className="os-about">Curio 2.1.0<br />Kernel 6.6.1-curio<br />Built with React + Vite<br />13 projects • SH110X 1.3″ cyber blue • Croc v0.5.3</p>
+        <p className="os-about">Desko 2.1.0<br />Kernel 6.6.1-desko<br />Built with React + Vite<br />13 projects • SH110X 1.3″ cyber blue • Croc v0.5.3</p>
       </div>
     </div>
   );
@@ -309,12 +309,12 @@ export function CalendarWindow() {
   const [selectedDate, setSelectedDate] = useState(new Date());
   const [view, setView] = useState("month"); // month | week
   const [events, setEvents] = useState(() => {
-    try { return JSON.parse(localStorage.getItem("curio_calendar_events") || "[]"); } catch { return []; }
+    try { return JSON.parse(localStorage.getItem("desko_calendar_events") || "[]"); } catch { return []; }
   });
   const [showAdd, setShowAdd] = useState(false);
   const [draft, setDraft] = useState({ title: "", time: "10:00", color: "#E95420" });
 
-  useEffect(() => { localStorage.setItem("curio_calendar_events", JSON.stringify(events)); }, [events]);
+  useEffect(() => { localStorage.setItem("desko_calendar_events", JSON.stringify(events)); }, [events]);
 
   const currentMonth = date.getMonth();
   const currentYear = date.getFullYear();

@@ -20,16 +20,16 @@ export const projects = [
   },
   {
     id: "proj-02",
-    name: "Curio",
+    name: "Desko",
     group: "Software",
-    path: "/projects/curio",
-    summary: "A fully interactive desktop OS portfolio — Curio — with draggable windows, terminal, and embedded live apps.",
-    details: "Stack: React, JavaScript, HTML/CSS, Canvas API — presented as Curio OS",
+    path: "/projects/desko",
+    summary: "A fully interactive desktop OS portfolio — Desko — with draggable windows, terminal, and embedded live apps.",
+    details: "Stack: React, JavaScript, HTML/CSS, Canvas API — presented as Desko OS",
     description:
-      "Curio reimagines a personal portfolio as a desktop environment instead of a stack of webpages. It boots with a startup sequence and drops the visitor into a Yaru-dark desktop with draggable, resizable windows, a top bar and dock. A working terminal lets visitors type commands to explore projects directly. One 'app' inside is a live canvas ecosystem (Meadow) embedded as a window, tying two projects into one demo of app architecture inside a single-page OS.",
+      "Desko reimagines a personal portfolio as a desktop environment instead of a stack of webpages. It boots with a startup sequence and drops the visitor into a Yaru-dark desktop with draggable, resizable windows, a top bar and dock. A working terminal lets visitors type commands to explore projects directly. One 'app' inside is a live canvas ecosystem (Meadow) embedded as a window, tying two projects into one demo of app architecture inside a single-page OS.",
     github: `https://github.com/${GITHUB_USER}`,
     live: "#",
-    image: "/assets/projects/curio.png"
+    image: "/assets/projects/desko.png"
   },
   {
     id: "proj-03",
@@ -39,7 +39,7 @@ export const projects = [
     summary: "An agent-based predator-prey ecosystem simulator inspired by Lotka-Volterra population dynamics.",
     details: "Stack: JavaScript, Canvas rendering, Lotka-Volterra-style population math",
     description:
-      "Meadow simulates a predator-prey ecosystem where prey reproduce, grow, and die off, while predators hunt, feed, starve, and die based on prey availability — modeling the same feedback loop described by Lotka-Volterra equations. Each simulation step updates population states based on birth, hunting, and death rules, producing emergent oscillations in population sizes over time. It exists both as a standalone simulator and as an embedded live widget inside CURIO, making it a demonstration of both simulation/math logic and component reusability.",
+      "Meadow simulates a predator-prey ecosystem where prey reproduce, grow, and die off, while predators hunt, feed, starve, and die based on prey availability — modeling the same feedback loop described by Lotka-Volterra equations. Each simulation step updates population states based on birth, hunting, and death rules, producing emergent oscillations in population sizes over time. It exists both as a standalone simulator and as an embedded live widget inside DESKO, making it a demonstration of both simulation/math logic and component reusability.",
     github: `https://github.com/${GITHUB_USER}`,
     live: "#",
     image: "/assets/projects/meadow.png"

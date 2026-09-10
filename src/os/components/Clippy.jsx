@@ -4,7 +4,7 @@ import { X, Lightbulb, MessageSquare, Heart } from "lucide-react";
 import AppContext from "../AppContext";
 
 const CLIPPY_TIPS = [
-  "Welcome to Curio! Press ⌘+R to open the Run dialog.",
+  "Welcome to Desko! Press ⌘+R to open the Run dialog.",
   "Right-click on the desktop for more options.",
   "Drag icons to rearrange them. Your layout is saved automatically.",
   "Open the App Store (📦) to install more apps.",
@@ -33,7 +33,7 @@ export function Clippy() {
   const { addNotification } = useContext(AppContext);
 
   useEffect(() => {
-    const dismissed = localStorage.getItem("curio_clippy_dismissed");
+    const dismissed = localStorage.getItem("desko_clippy_dismissed");
     if (!dismissed) {
       showTimerRef.current = setTimeout(() => {
         setVisible(true);
@@ -53,7 +53,7 @@ export function Clippy() {
 
   function dismiss() {
     setVisible(false);
-    localStorage.setItem("curio_clippy_dismissed", "true");
+    localStorage.setItem("desko_clippy_dismissed", "true");
     clearTimeout(timerRef.current);
   }
 

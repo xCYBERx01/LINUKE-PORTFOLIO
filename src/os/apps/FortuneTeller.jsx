@@ -39,13 +39,13 @@ export function FortuneTeller() {
   const [currentFortune, setCurrentFortune] = useState(null);
   const [selectedCategory, setSelectedCategory] = useState("all");
   const [history, setHistory] = useState(() => {
-    try { return JSON.parse(localStorage.getItem("curio_fortune_history")) || []; } catch { return []; }
+    try { return JSON.parse(localStorage.getItem("desko_fortune_history")) || []; } catch { return []; }
   });
   const [animating, setAnimating] = useState(false);
   const [dailyFortune, setDailyFortune] = useState(null);
 
   useEffect(() => {
-    const saved = localStorage.getItem("curio_daily_fortune");
+    const saved = localStorage.getItem("desko_daily_fortune");
     if (saved) {
       try {
         const { date, fortune } = JSON.parse(saved);
@@ -57,7 +57,7 @@ export function FortuneTeller() {
     }
     const fortune = getRandomFortune();
     setDailyFortune(fortune);
-    localStorage.setItem("curio_daily_fortune", JSON.stringify({ date: new Date().toDateString(), fortune }));
+    localStorage.setItem("desko_daily_fortune", JSON.stringify({ date: new Date().toDateString(), fortune }));
   }, []);
 
   function getRandomFortune(category = "all") {
@@ -71,14 +71,14 @@ export function FortuneTeller() {
       const fortune = getRandomFortune(selectedCategory);
       setCurrentFortune(fortune);
       setHistory(prev => [fortune, ...prev.slice(0, 9)]);
-      localStorage.setItem("curio_fortune_history", JSON.stringify(history));
+      localStorage.setItem("desko_fortune_history", JSON.stringify(history));
       setAnimating(false);
     }, 800);
   }
 
   function clearHistory() {
     setHistory([]);
-    localStorage.removeItem("curio_fortune_history");
+    localStorage.removeItem("desko_fortune_history");
   }
 
   return (

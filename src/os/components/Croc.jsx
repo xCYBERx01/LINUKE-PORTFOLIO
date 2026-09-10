@@ -54,7 +54,7 @@ function FaceV053({ expression, blinking, eyeX, eyeY, now }) {
       {/* cyber-blue eyebrows */}
       {expression === "angry" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={10} x2={leftX + 22} y2={18} /><line x1={rightX + 6} y1={18} x2={rightX + 28} y2={10} /></g>}
       {expression === "proud" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={16} x2={leftX + 22} y2={10} /><line x1={rightX + 6} y1={10} x2={rightX + 28} y2={16} /></g>}
-      {expression === "curious" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={10} x2={leftX + 20} y2={8} /></g>}
+      {expression === "deskous" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={10} x2={leftX + 20} y2={8} /></g>}
       {blinking ? (
         <>
           <rect x={leftX} y={26} width={eyeW} height={4} rx={2} fill="#4fc3f7" />
@@ -141,12 +141,12 @@ export default function Croc() {
   function showNextTip() {
     const m = CROC_TIPS[tipIndex % CROC_TIPS.length];
     setBalloonMsg(m); setBalloonVisible(true); setTipIndex((i) => i + 1);
-    setExpressionFor("curious", 1200); beep(1600, 70);
+    setExpressionFor("deskous", 1200); beep(1600, 70);
   }
   function showThought() {
     const m = CROC_THOUGHTS[Math.floor(Math.random() * CROC_THOUGHTS.length)];
     setBalloonMsg(m); setBalloonVisible(true);
-    setExpressionFor("curious", 1200); beep(1600, 70);
+    setExpressionFor("deskous", 1200); beep(1600, 70);
   }
   function handleLike() {
     addNotification({ title: "Croc", message: "You're awesome! ❤️", duration: 2500 });
@@ -156,8 +156,8 @@ export default function Croc() {
 
   // balloon first show — delayed + dismissible, not annoying
   useEffect(() => {
-    const dismissed = localStorage.getItem("curio_croc_dismissed");
-    const hidden = localStorage.getItem("curio_croc_hidden") === "1";
+    const dismissed = localStorage.getItem("desko_croc_dismissed");
+    const hidden = localStorage.getItem("desko_croc_hidden") === "1";
     if (hidden) return;
     if (!dismissed || Date.now() - parseInt(dismissed, 10) > 3600000) {
       const t = setTimeout(() => {
@@ -190,8 +190,8 @@ export default function Croc() {
 
   // face engine — respect reduce motion & croc hidden
   useEffect(() => {
-    if (localStorage.getItem("curio_croc_hidden") === "1") return;
-    const reduce = localStorage.getItem("curio_reduce") === "1";
+    if (localStorage.getItem("desko_croc_hidden") === "1") return;
+    const reduce = localStorage.getItem("desko_reduce") === "1";
     const interval = reduce ? 120 : 33;
     const id = setInterval(() => {
       const t = Date.now(); setNow(t);
@@ -265,7 +265,7 @@ export default function Croc() {
               <button onClick={showThought}><MessageSquare size={14} /> Thought</button>
               <button onClick={handleLike}><Heart size={14} /> Like</button>
             </div>
-            <button className="os-croc-balloon-close" onClick={() => { setBalloonVisible(false); localStorage.setItem("curio_croc_dismissed", Date.now().toString()); }}><X size={12} /></button>
+            <button className="os-croc-balloon-close" onClick={() => { setBalloonVisible(false); localStorage.setItem("desko_croc_dismissed", Date.now().toString()); }}><X size={12} /></button>
           </motion.div>
         )}
       </AnimatePresence>

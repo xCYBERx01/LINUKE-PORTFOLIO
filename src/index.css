@@ -5281,7 +5281,7 @@ button {
 }
 .os-croc-balloon-close:hover { background: rgba(255,255,255,0.08); color: #fff; }
 
-/* —————— CURIO polish: playful but minimal —————— */
+/* —————— DESKO polish: playful but minimal —————— */
 .gnome-dock-item { transition: transform 0.12s ease, background 0.12s; }
 .gnome-dock-item:hover { transform: translateY(-2px) scale(1.06); }
 .os-window { animation: winIn 0.16s ease-out; }

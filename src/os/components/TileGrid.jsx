@@ -22,7 +22,7 @@ function restoreIcons(tiles) {
 
 export function TileGrid({ open, onClose, onOpen }) {
   const [tiles, setTiles] = useState(() => {
-    const saved = localStorage.getItem("curio_tiles");
+    const saved = localStorage.getItem("desko_tiles");
     if (saved) {
       try { return restoreIcons(JSON.parse(saved)); } catch {}
     }
@@ -48,7 +48,7 @@ export function TileGrid({ open, onClose, onOpen }) {
 
   useEffect(() => {
     const tilesToSave = tiles.map(({ icon, ...rest }) => rest);
-    localStorage.setItem("curio_tiles", JSON.stringify(tilesToSave));
+    localStorage.setItem("desko_tiles", JSON.stringify(tilesToSave));
   }, [tiles]);
 
   const allApps = desktopApps();

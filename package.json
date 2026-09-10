@@ -1,13 +1,13 @@
 {
-  "name": "curio",
+  "name": "desko",
   "private": true,
   "version": "1.0.0",
-  "description": "CURIO — Linux desktop portfolio (React + Vite). Draggable windows, terminal, Croc OS companion.",
+  "description": "DESKO — Linux desktop portfolio (React + Vite). Draggable windows, terminal, Croc OS companion.",
   "type": "module",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "build:gh": "vite build --base=/curio/",
+    "build:gh": "vite build --base=/desko/",
     "lint": "oxlint",
     "preview": "vite preview"
   },

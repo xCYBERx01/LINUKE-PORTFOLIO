@@ -285,7 +285,7 @@ export function PaintWindow() {
   }
   function save() {
     const a = document.createElement("a");
-    a.download = `curio-paint-${Date.now()}.png`;
+    a.download = `desko-paint-${Date.now()}.png`;
     a.href = canvasRef.current.toDataURL("image/png");
     a.click();
   }

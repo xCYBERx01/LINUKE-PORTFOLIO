@@ -1,10 +1,10 @@
-# CURIO — Linux Portfolio OS
+# DESKO — Linux Portfolio OS
 
 Interactive Linux desktop portfolio by **Ahmed Irfan Akrami** — Robotics & AI Engineer, NRL 2025 Community Champion (Team VoltEdge 007, IIT Bombay).
 
-Live: **https://webcv-ahmed.netlify.app** · **https://ahmedcli.netlify.app** — PWA installable · Repo: `CURIO`
+Live: **https://webcv-ahmed.netlify.app** · **https://ahmedcli.netlify.app** — PWA installable · Repo: `DESKO`
 
-![CURIO preview](public/favicon.svg)
+![DESKO preview](public/favicon.svg)
 
 ## Try it
 - Drag / resize windows · **Alt+R** run dialog · **Super/Win+A** Activities

@@ -26,10 +26,10 @@ export function formatDate(date) {
 export function BootScreen() {
   const [progress, setProgress] = useState(0);
   const bootLines = [
-    "Loading Curio kernel 6.6.1...",
+    "Loading Desko kernel 6.6.1...",
     "Enumerating USB devices... ok",
     "Mounting /home/ahmed... ok",
-    "Starting Curio Shell...",
+    "Starting Desko Shell...",
   ];
 
   useEffect(() => {
@@ -45,7 +45,7 @@ export function BootScreen() {
     <div className="os-boot">
       <div className="os-boot-logo">
         <Monitor size={44} />
-        <span>Curio</span>
+        <span>Desko</span>
       </div>
       <div className="os-boot-line">{bootLines[line]}</div>
       <div className="os-boot-bar">
@@ -63,7 +63,7 @@ export function LoginScreen({ onLogin, onPower }) {
   function submit(e) {
     e.preventDefault();
     const v = pass.trim().toLowerCase();
-    if (v === "linux" || v === "curio" || v === "password" || v === "ahmed") {
+    if (v === "linux" || v === "desko" || v === "password" || v === "ahmed") {
       onLogin();
     } else {
       setError(true);
@@ -78,7 +78,7 @@ export function LoginScreen({ onLogin, onPower }) {
           <TerminalSquare size={40} />
         </div>
         <h1>ahmed</h1>
-        <p>Curio</p>
+        <p>Desko</p>
         <input
           type="password"
           placeholder="Password"
@@ -88,7 +88,7 @@ export function LoginScreen({ onLogin, onPower }) {
         />
         {error && <span className="os-login-error">Incorrect password. Try "linux".</span>}
         <button type="submit">Sign In</button>
-        <small>Hint: linux · curio · password · ahmed</small>
+        <small>Hint: linux · desko · password · ahmed</small>
       </form>
       <div className="os-login-buttons">
         <button onClick={onPower} title="Power options"><Power size={16} /></button>
@@ -141,12 +141,12 @@ export function DesktopIcons({ items, selected, onSelect, onOpen, onContext }) {
 
   function handleDragStop(key, x, y) {
     // Update item position in localStorage
-    const stored = localStorage.getItem("curio_desktop_items");
+    const stored = localStorage.getItem("desko_desktop_items");
     if (stored) {
       try {
         const parsed = JSON.parse(stored);
         const updated = parsed.map(item => item.key === key ? { ...item, x, y } : item);
-        localStorage.setItem("curio_desktop_items", JSON.stringify(updated));
+        localStorage.setItem("desko_desktop_items", JSON.stringify(updated));
       } catch {}
     }
   }
@@ -201,7 +201,7 @@ export function AppMenu({ open, onClose, onOpen }) {
       <div className="os-appmenu">
         <div className="os-appmenu-head">
           <Monitor size={16} />
-          <span>Curio Apps</span>
+          <span>Desko Apps</span>
         </div>
         <div className="os-appmenu-search">
           <Search size={14} />

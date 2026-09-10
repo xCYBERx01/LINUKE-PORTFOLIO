@@ -3,17 +3,17 @@ import { X, Maximize2, Minimize2, ExternalLink, RefreshCw } from "lucide-react";
 
 const NETLIFY_GAMES = {
   flappy: {
-    url: "https://curio-flappy.netlify.app",
+    url: "https://desko-flappy.netlify.app",
     label: "Flappy Bird",
     icon: "🐦",
   },
   pacman: {
-    url: "https://curio-pacman.netlify.app",
+    url: "https://desko-pacman.netlify.app",
     label: "Pac-Man",
     icon: "👻",
   },
   crossy: {
-    url: "https://curio-crossy.netlify.app",
+    url: "https://desko-crossy.netlify.app",
     label: "Crossy Road",
     icon: "🐔",
   },

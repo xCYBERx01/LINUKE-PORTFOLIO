@@ -5,6 +5,6 @@ import { defineConfig } from 'vite'
 const isGhPages = process.env.VITE_GH_PAGES === '1' || process.env.GITHUB_PAGES === 'true'
 
 export default defineConfig({
-  base: isGhPages ? '/curio/' : '/',
+  base: isGhPages ? '/desko/' : '/',
   plugins: [react()],
 })

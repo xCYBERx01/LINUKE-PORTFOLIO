@@ -54,7 +54,7 @@ export function AppStore() {
   const [uninstalling, setUninstalling] = useState(null);
   const [installed, setInstalled] = useState(() => {
     try {
-      const raw = localStorage.getItem("curio_installed_apps");
+      const raw = localStorage.getItem("desko_installed_apps");
       if (raw) return new Set(JSON.parse(raw));
       // default: all installed
       return new Set(desktopApps().map((a) => a.appId));
@@ -64,7 +64,7 @@ export function AppStore() {
   const ALL_APPS = desktopApps();
 
   useEffect(() => {
-    localStorage.setItem("curio_installed_apps", JSON.stringify([...installed]));
+    localStorage.setItem("desko_installed_apps", JSON.stringify([...installed]));
   }, [installed]);
 
   // auto-select first filtered
@@ -186,7 +186,7 @@ export function AppStore() {
                   <div style={{ fontSize: 12, color: "#888" }}>{APP_CATEGORIES[selectedApp.appId]} • {isInstalled(selectedApp.appId) ? "Installed" : "Not installed"}</div>
                 </div>
               </div>
-              <p style={{ marginTop: 12, fontSize: 13, color: "#aaa", lineHeight: 1.5 }}>{APP_DESC[selectedApp.appId] || "Utility for Curio."}</p>
+              <p style={{ marginTop: 12, fontSize: 13, color: "#aaa", lineHeight: 1.5 }}>{APP_DESC[selectedApp.appId] || "Utility for Desko."}</p>
               <div style={{ marginTop: 14, display: "flex", gap: 8 }}>
                 {isInstalled(selectedApp.appId) ? (
                   <button onClick={() => handleUninstall(selectedApp)} disabled={uninstalling === selectedApp.appId} style={{ padding: "9px 14px", background: "#2d2d2d", border: "1px solid #E95420", color: "#E95420", borderRadius: 8, cursor: "pointer", fontSize: 12, display: "flex", alignItems: "center", gap: 6 }}>

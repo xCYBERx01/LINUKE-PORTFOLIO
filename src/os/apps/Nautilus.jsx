@@ -45,7 +45,7 @@ const groupIcons = {
 
 const projectIcons = {
   "proj-01": Cpu, // Croc OS — ESP32
-  "proj-02": Monitor, // CURIO — desktop OS
+  "proj-02": Monitor, // DESKO — desktop OS
   "proj-03": Leaf, // Meadow — ecosystem
   "proj-04": Wallet, // Kharcha — expense
   "proj-05": Trophy, // Sports Engine — tournament

@@ -30,11 +30,11 @@ function neofetch() {
           |:_/ |
          //   \\ \\     Ahmed Irfan Akrami
         (|     | )    ------------------------
-       /'\\_   _/\`\\    User: ahmed@curio
-       \\___)=(___/    OS: Curio
+       /'\\_   _/\`\\    User: ahmed@desko
+       \\___)=(___/    OS: Desko
                       Shell: bash 5.2
-                      Terminal: Curio Terminal
-                      Project: CURIO Linux Portfolio
+                      Terminal: Desko Terminal
+                      Project: DESKO Linux Portfolio
                       Uptime: 24/7 recruiter ready`;
   return logo.trim();
 }
@@ -42,7 +42,7 @@ function neofetch() {
 export default function Terminal({ onOpenApp }) {
   const [input, setInput] = useState("");
   const [lines, setLines] = useState([
-    "Curio shell v1.0",
+    "Desko shell v1.0",
     "Type `help` for a list of commands.",
     "",
   ]);
@@ -75,7 +75,7 @@ export default function Terminal({ onOpenApp }) {
     else if (command === "whoami") output = terminalConfig.whoami || "ahmed (Ahmed Irfan Akrami)";
     else if (command === "neofetch") output = neofetch();
     else if (command === "date") output = new Date().toString();
-    else if (command === "banner") output = "Welcome to Curio — where robotics meets the desktop.";
+    else if (command === "banner") output = "Welcome to Desko — where robotics meets the desktop.";
     else if (command === "github") { window.open(contact.github || "https://github.com/xCYBERx01", "_blank"); output = `Opening ${contact.github || "github.com/xCYBERx01"}`; }
     else if (command === "hello") output = "Hello! Thanks for exploring my Linux portfolio.";
     else if (command === "projects") output = SRC.map((p) => `${p.path.padEnd(38)} ${p.group}`).join("\n");
@@ -136,7 +136,7 @@ export default function Terminal({ onOpenApp }) {
       output = `bash: ${command}: command not found — try \`help\``;
     }
 
-    setLines((cur) => [...cur, `ahmed@curio:~$ ${raw}`, output, ""]);
+    setLines((cur) => [...cur, `ahmed@desko:~$ ${raw}`, output, ""]);
     setInput("");
   }
 
@@ -146,7 +146,7 @@ export default function Terminal({ onOpenApp }) {
         <pre key={i}>{line || " "}</pre>
       ))}
       <div className="os-terminal-input">
-        <span className="prompt">ahmed@curio:~$</span>
+        <span className="prompt">ahmed@desko:~$</span>
         <input
           autoFocus
           value={input}

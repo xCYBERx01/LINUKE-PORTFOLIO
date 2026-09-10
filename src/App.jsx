@@ -13,19 +13,20 @@ import TopBar from "./os/components/TopBar";
 import Dock from "./os/components/Dock";
 import Dashboard from "./os/apps/Dashboard";
 
-const WALLPAPER_KEY = "curio_wallpaper";
-const ACCENT_KEY = "curio_accent";
+const WALLPAPER_KEY = "desko_wallpaper";
+const ACCENT_KEY = "desko_accent";
 
 function loadJSON(key, fallback) {
   try {
     const v = localStorage.getItem(key);
     if (v !== null) return JSON.parse(v) ?? fallback;
-    // migrate from legacy curio<->mintex keys (one-time)
-    const legacy = key.replace("curio_", "mintex_");
-    const lv = localStorage.getItem(legacy);
-    if (lv !== null) {
-      localStorage.setItem(key, lv);
-      return JSON.parse(lv) ?? fallback;
+    for (const prefix of ["curio_", "mintex_"]) {
+      const legacy = key.replace("desko_", prefix);
+      const lv = localStorage.getItem(legacy);
+      if (lv !== null) {
+        localStorage.setItem(key, lv);
+        return JSON.parse(lv) ?? fallback;
+      }
     }
     return fallback;
   } catch {
@@ -58,7 +59,7 @@ const stableRegistry = desktopApps().reduce((acc, a) => {
   return acc;
 }, {});
 
-function CurioOSInner() {
+function DeskoOSInner() {
   const [now, setNow] = useState(new Date());
   const [wallpaper, setWallpaper] = useState(() => loadJSON(WALLPAPER_KEY, "default"));
   const [accent, setAccent] = useState(() => loadJSON(ACCENT_KEY, "teal"));
@@ -66,7 +67,7 @@ function CurioOSInner() {
   const [runDialogOpen, setRunDialogOpen] = useState(false);
   const [shutdownOpen, setShutdownOpen] = useState(false);
   const [dashboardOpen, setDashboardOpen] = useState(false);
-  const [booting, setBooting] = useState(() => !sessionStorage.getItem("curio_booted"));
+  const [booting, setBooting] = useState(() => !sessionStorage.getItem("desko_booted"));
   const [helpOpen, setHelpOpen] = useState(false);
 
   const MAIN_APPS = desktopApps();
@@ -102,7 +103,7 @@ function CurioOSInner() {
 
   useEffect(() => {
     if (booting) {
-      const t = setTimeout(() => { setBooting(false); sessionStorage.setItem("curio_booted", "1"); }, 1400);
+      const t = setTimeout(() => { setBooting(false); sessionStorage.setItem("desko_booted", "1"); }, 1400);
       return () => clearTimeout(t);
     }
   }, [booting]);
@@ -137,10 +138,10 @@ function CurioOSInner() {
         pos++;
         if (pos === seq.length) {
           pos = 0;
-          addNotification({ title: "↑↑↓↓←→←→BA — CURIO Unlocked!", message: "Croc is dancing • try ? for shortcuts", duration: 4000 });
+          addNotification({ title: "↑↑↓↓←→←→BA — DESKO Unlocked!", message: "Croc is dancing • try ? for shortcuts", duration: 4000 });
           // trigger croc frenzy via storage flag
-          localStorage.setItem("curio_konami", String(Date.now()));
-          window.dispatchEvent(new Event("curio-konami"));
+          localStorage.setItem("desko_konami", String(Date.now()));
+          window.dispatchEvent(new Event("desko-konami"));
           // spawn a few windows for fun
           setTimeout(() => openApp("paint"), 200);
         }
@@ -268,7 +269,7 @@ function CurioOSInner() {
         <div style={{ position: "fixed", inset: 0, zIndex: 9999, display: "grid", placeItems: "center", background: "#05070c", color: "#d9e2ec" }}>
           <div style={{ display: "flex", flexDirection: "column", alignItems: "center", gap: 18 }}>
             <div style={{ width: 44, height: 44, border: "3px solid #222", borderTopColor: "#E95420", borderRadius: "50%", animation: "spin 0.9s linear infinite" }} />
-            <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: 1 }}>CURIO — booting…</div>
+            <div style={{ fontFamily: "var(--font-mono)", fontSize: 13, letterSpacing: 1 }}>DESKO — booting…</div>
             <div style={{ fontSize: 11, color: "#6d7f93" }}>Tip: press ? for shortcuts • Alt+R to run</div>
           </div>
           <style>{`@keyframes spin{to{transform:rotate(360deg)}}`}</style>
@@ -277,7 +278,7 @@ function CurioOSInner() {
       {helpOpen && (
         <div onClick={() => setHelpOpen(false)} style={{ position: "fixed", inset: 0, zIndex: 9998, background: "rgba(0,0,0,0.55)", backdropFilter: "blur(6px)", display: "grid", placeItems: "center", padding: 16 }} >
           <div onClick={(e) => e.stopPropagation()} style={{ width: 460, maxWidth: "92vw", background: "#1e1e1e", border: "1px solid #333", borderRadius: 12, padding: 16, color: "#ddd" }}>
-            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><strong>CURIO Shortcuts</strong><button onClick={() => setHelpOpen(false)} style={{ background: "transparent", border: 0, color: "#888", cursor: "pointer" }}>✕</button></div>
+            <div style={{ display: "flex", justifyContent: "space-between", alignItems: "center" }}><strong>DESKO Shortcuts</strong><button onClick={() => setHelpOpen(false)} style={{ background: "transparent", border: 0, color: "#888", cursor: "pointer" }}>✕</button></div>
             <div style={{ display: "grid", gridTemplateColumns: "1fr 1fr", gap: 8, marginTop: 12, fontSize: 12, lineHeight: 1.6 }}>
               <div><kbd>Alt</kbd>+<kbd>R</kbd> — Run dialog</div><div><kbd>Super</kbd>+<kbd>A</kbd> — Activities</div>
               <div><kbd>?</kbd> — This help</div><div><kbd>Esc</kbd> — Close overlay</div>
@@ -379,10 +380,10 @@ function CurioOSInner() {
   );
 }
 
-export default function CurioOS() {
+export default function DeskoOS() {
   return (
     <AppProvider>
-      <CurioOSInner />
+      <DeskoOSInner />
     </AppProvider>
   );
 }

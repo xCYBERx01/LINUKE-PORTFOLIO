@@ -23,7 +23,7 @@ import { Search, X, ChevronLeft, ChevronRight, MoreHorizontal } from "lucide-rea
 const ICONS_PER_PAGE = 20;
 const EDGE_ZONE = 80;
 const EDGE_DELAY = 650;
-const STORAGE_KEY = "curio_appicons_order";
+const STORAGE_KEY = "desko_appicons_order";
 
 const bannedApps = ["recycle", "trash"];
 

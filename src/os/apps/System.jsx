@@ -99,7 +99,7 @@ export function TaskManagerWindow({ windows, activeId, onFocus, onClose }) {
           </div>
         </div>
       )}
-      <div className="os-tm-footer">Curio Task Manager — {windows.length} process{windows.length === 1 ? "" : "es"} running</div>
+      <div className="os-tm-footer">Desko Task Manager — {windows.length} process{windows.length === 1 ? "" : "es"} running</div>
     </div>
   );
 }
@@ -133,16 +133,16 @@ export function SysMonitorWindow() {
         <span>9%</span>
       </div>
       <dl className="os-sysmon-info">
-        <div><dt>OS</dt><dd>Curio 6.6</dd></div>
-        <div><dt>Kernel</dt><dd>6.6.1-curio</dd></div>
-        <div><dt>DE</dt><dd>Curio Shell</dd></div>
+        <div><dt>OS</dt><dd>Desko 6.6</dd></div>
+        <div><dt>Kernel</dt><dd>6.6.1-desko</dd></div>
+        <div><dt>DE</dt><dd>Desko Shell</dd></div>
         <div><dt>User</dt><dd>ahmed</dd></div>
       </dl>
     </div>
   );
 }
 
-const BIN_KEY = "curio_bin";
+const BIN_KEY = "desko_bin";
 
 export function RecycleBinWindow() {
   const [items, setItems] = useState(() => {

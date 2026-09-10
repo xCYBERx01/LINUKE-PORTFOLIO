@@ -4,7 +4,7 @@ import { X, RotateCw, AlertTriangle } from "lucide-react";
 import AppContext from "../AppContext";
 
 const PATCH_VERSION = "2.1.0";
-const STORAGE_KEY = "curio_patch_dismissed";
+const STORAGE_KEY = "desko_patch_dismissed";
 
 export function PatchNotification() {
   const [visible, setVisible] = useState(false);
@@ -43,7 +43,7 @@ export function PatchNotification() {
         </div>
         <div className="os-patch-content">
           <strong>System Update Available</strong>
-          <span>Curio {PATCH_VERSION} is ready to install. New features: App Store, Run Dialog, Enhanced Task Manager, and more!</span>
+          <span>Desko {PATCH_VERSION} is ready to install. New features: App Store, Run Dialog, Enhanced Task Manager, and more!</span>
         </div>
         <div className="os-patch-actions">
           <button className="os-patch-btn-primary" onClick={() => { addNotification({ title: "Updating...", message: "Downloading and installing updates", duration: 5000 }); dismiss(); }}>
