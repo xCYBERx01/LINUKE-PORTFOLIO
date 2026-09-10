@@ -1,8 +1,9 @@
+import { Bot } from "lucide-react";
 import { desktopApps } from "../registry";
 
 const PINNED = ["nautilus", "firefox", "terminal", "settings", "contact"];
 
-export default function Dock({ openApps, activeId, onOpen }) {
+export default function Dock({ openApps, activeId, onOpen, crocVisible }) {
   const all = desktopApps();
   const pinned = PINNED.map((id) => all.find((a) => a.appId === id)).filter(Boolean);
   const running = openApps.filter((id) => !PINNED.includes(id));
@@ -28,6 +29,14 @@ export default function Dock({ openApps, activeId, onOpen }) {
           </button>
         );
       })}
+      <button
+        className={`gnome-dock-item ${crocVisible ? "active open" : ""}`}
+        onClick={() => onOpen("croc")}
+        title="Croc OS"
+      >
+        <Bot size={22} />
+        {crocVisible && <div className="gnome-dock-dot" />}
+      </button>
       {runningApps.length > 0 && (
         <div className="gnome-dock-separator" />
       )}

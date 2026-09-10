@@ -7,7 +7,6 @@ import { AppProvider, useAppContext } from "./os/AppContext";
 import { Notification } from "./os/components/Notification";
 import { AppDrawer } from "./os/components/AppDrawer";
 import { RunDialog } from "./os/components/RunDialog";
-import { PatchNotification } from "./os/components/PatchNotification";
 import Croc from "./os/components/Croc";
 import TopBar from "./os/components/TopBar";
 import Dock from "./os/components/Dock";
@@ -69,6 +68,7 @@ function DeskoOSInner() {
   const [dashboardOpen, setDashboardOpen] = useState(false);
   const [booting, setBooting] = useState(() => !sessionStorage.getItem("desko_booted"));
   const [helpOpen, setHelpOpen] = useState(false);
+  const [crocVisible, setCrocVisible] = useState(false);
 
   const MAIN_APPS = desktopApps();
 
@@ -153,6 +153,11 @@ function DeskoOSInner() {
 
   const lastNotifRef = useRef(0);
   function openApp(appId) {
+    if (appId === "croc") {
+      setCrocVisible((v) => !v);
+      setAppDrawerOpen(false);
+      return;
+    }
     if (appId === "dashboard") {
       setDashboardOpen((v) => !v);
       setAppDrawerOpen(false);
@@ -313,6 +318,7 @@ function DeskoOSInner() {
           openApps={openAppIds}
           activeId={activeAppId}
           onOpen={openApp}
+          crocVisible={crocVisible}
         />
 
         <div
@@ -371,9 +377,7 @@ function DeskoOSInner() {
         onOpen={openApp}
       />
 
-      <PatchNotification />
-
-      <Croc />
+      {crocVisible && <Croc onClose={() => setCrocVisible(false)} />}
 
       <Notification />
     </div>

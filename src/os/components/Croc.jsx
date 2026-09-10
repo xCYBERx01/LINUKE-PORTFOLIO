@@ -54,7 +54,7 @@ function FaceV053({ expression, blinking, eyeX, eyeY, now }) {
       {/* cyber-blue eyebrows */}
       {expression === "angry" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={10} x2={leftX + 22} y2={18} /><line x1={rightX + 6} y1={18} x2={rightX + 28} y2={10} /></g>}
       {expression === "proud" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={16} x2={leftX + 22} y2={10} /><line x1={rightX + 6} y1={10} x2={rightX + 28} y2={16} /></g>}
-      {expression === "deskous" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={10} x2={leftX + 20} y2={8} /></g>}
+      {expression === "curious" && <g stroke="#4fc3f7" strokeWidth={1.2} strokeLinecap="round"><line x1={leftX} y1={10} x2={leftX + 20} y2={8} /></g>}
       {blinking ? (
         <>
           <rect x={leftX} y={26} width={eyeW} height={4} rx={2} fill="#4fc3f7" />
@@ -110,7 +110,7 @@ function FaceV053({ expression, blinking, eyeX, eyeY, now }) {
   );
 }
 
-export default function Croc() {
+export default function Croc({ onClose }) {
   const [visible, setVisible] = useState(true);
   const [expression, setExpression] = useState("idle");
   const [balloonVisible, setBalloonVisible] = useState(false);
@@ -141,12 +141,12 @@ export default function Croc() {
   function showNextTip() {
     const m = CROC_TIPS[tipIndex % CROC_TIPS.length];
     setBalloonMsg(m); setBalloonVisible(true); setTipIndex((i) => i + 1);
-    setExpressionFor("deskous", 1200); beep(1600, 70);
+    setExpressionFor("curious", 1200); beep(1600, 70);
   }
   function showThought() {
     const m = CROC_THOUGHTS[Math.floor(Math.random() * CROC_THOUGHTS.length)];
     setBalloonMsg(m); setBalloonVisible(true);
-    setExpressionFor("deskous", 1200); beep(1600, 70);
+    setExpressionFor("curious", 1200); beep(1600, 70);
   }
   function handleLike() {
     addNotification({ title: "Croc", message: "You're awesome! ❤️", duration: 2500 });
@@ -248,6 +248,11 @@ export default function Croc() {
 
   if (!visible) return null;
 
+  function handleClose() {
+    setVisible(false);
+    if (onClose) onClose();
+  }
+
   return (
     <div className="os-croc os-croc--borderless">
       <AnimatePresence>
@@ -277,8 +282,17 @@ export default function Croc() {
         onClick={handleEyeClick}
         onContextMenu={handleRightClick}
         title="Left eye → love • Right eye → trick • Right-click → yawn/angry • Click tilts"
-        style={{ cursor: "pointer" }}
+        style={{ cursor: "pointer", position: "relative" }}
       >
+        {onClose && (
+          <button
+            onClick={(e) => { e.stopPropagation(); handleClose(); }}
+            title="Close Croc"
+            style={{ position: "absolute", top: -8, right: -8, width: 18, height: 18, display: "grid", placeItems: "center", borderRadius: "50%", background: "#2d2d2d", border: "1px solid #444", color: "#aaa", cursor: "pointer", zIndex: 5 }}
+          >
+            <X size={10} />
+          </button>
+        )}
         <div className="os-croc-oled os-croc-oled--face">
           <FaceV053 expression={expression} blinking={blinking} eyeX={eye.x} eyeY={eye.y} now={now} />
         </div>
